@@ -8,6 +8,8 @@ body {
 /* Intro screen */
 #intro {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: black;
@@ -30,6 +32,14 @@ body {
   font-weight: bold;
   color: white;
   text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
    text-shadow:
     0 0 5px rgba(255,255,255,0.5),
@@ -95,7 +105,6 @@ body {
   position: relative;
   width: 200px;
   height: 200px;
-  margin: auto;
 }
 
 /* Circle */
