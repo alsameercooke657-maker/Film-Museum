@@ -151,7 +151,7 @@ body {
   transform-origin: top center;
 
   animation: sweep 1s linear infinite;
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 @keyframes sweep {
