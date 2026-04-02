@@ -27,6 +27,7 @@ function beep() {
 startScreen.addEventListener("click", () => {
   startScreen.classList.add("hidden");
   countdown.classList.remove("hidden");
+  document.querySelector(".film-frame").classList.add("start");
 
   const interval = setInterval(() => {
     beep();
