@@ -48,7 +48,7 @@ body {
 
 /* Hidden state */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Fade effect */
