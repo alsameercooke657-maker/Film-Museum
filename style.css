@@ -26,8 +26,14 @@ body {
 
 /* Countdown */
 #countdown {
-  font-size: 120px;
+  font-size: 140px;
   font-weight: bold;
+  color: white;
+  text-align: center;
+
+   text-shadow:
+    0 0 5px rgba(255,255,255,0.5),
+    0 0 15px rgba(255,255,255,0.2);
 }
 
 /* Hidden state */
@@ -45,4 +51,41 @@ body {
     opacity: 0;
     transform: scale(1.1);
   }
+}
+
+/* Film grain overlay */
+#intro::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.2;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.92; }
+  100% { opacity: 1; }
+}
+
+#intro {
+  animation: flicker 0.15s infinite;
+}
+
+#intro::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(0,0,0,0.7) 100%
+  );
 }
