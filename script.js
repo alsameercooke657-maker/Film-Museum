@@ -27,7 +27,11 @@ function beep() {
 startScreen.addEventListener("click", () => {
   startScreen.classList.add("hidden");
   countdown.classList.remove("hidden");
-  document.querySelector(".film-frame").classList.add("start");
+
+  count = 5; // reset just in case
+
+  startCountdown();
+});
 
   const interval = setInterval(() => {
     beep();
@@ -47,3 +51,29 @@ startScreen.addEventListener("click", () => {
     }
   }, 1000);
 });
+
+let count = 5;
+let interval;
+
+function startCountdown() {
+  interval = setInterval(() => {
+    if (count < 0) {
+      clearInterval(interval);
+      endIntro();
+      return;
+    }
+
+    number.textContent = count;
+    beep();
+
+    count--;
+  }, 1000);
+}
+
+function endIntro() {
+  clearInterval(interval);
+
+  intro.style.display = "none";  // HARD REMOVE EVERYTHING
+
+  site.classList.remove("hidden");
+}
